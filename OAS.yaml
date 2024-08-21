@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: STD23038
+  version: 1.0.0
+servers:
+    - url: "https://localhost.std23038.com" 
+paths:
+  /customers:
+    get:
+      responses:
+        '200': 
+          description: get all customers
+          content:
+              application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      $ref: "#/components/customer"
+                      
+  components:
+      schemas:
+        customer:
+          type: object
+          propertiees: 
+           name: 
+             type: string
+          yearOld: 
+              type: integer
+          
